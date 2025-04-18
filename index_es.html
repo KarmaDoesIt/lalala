@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Concienciación Sobre la Ciberseguridad</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <a href="#inicio" class="site-logo">Site Name/Logo</a>
+    <nav>
+      <ul>
+        <li><a href="index_es.html">Inicio</a></li>
+        <li><a href="modules_es.html">Módulos</a></li>
+        <li><a href="quiz_es.html">Prueba</a></li>
+        <li>
+          <select id="languageSwitcher">
+            <option value="index.html">English</option>
+            <option value="index_es.html">Español</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h1>Aprenda Asegure Proteja</h1>
+      <p>Bienvenidos a nuestra herramienta de conciencia de seguridad informática.</p>
+      <a href="modules_es.html" class="button">Ver Módulos</a>
+      <a href="quiz_es.html" class="button">Tome la prueba</a>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("languageSwitcher").addEventListener("change", function () {
+      window.location.href = this.value;
+    });
+
+    const currentPage = location.pathname.split("/").pop();
+    const options = document.querySelectorAll("#languageSwitcher option");
+    options.forEach(option => {
+      if (option.value === currentPage) {
+        option.selected = true;
+      }
+    });
+  </script>
+ <footer>
+        <p>&copy; 2025 Cybersecurity Awareness. All rights reserved.</p>
+    </footer>
+</body>
+</html>
